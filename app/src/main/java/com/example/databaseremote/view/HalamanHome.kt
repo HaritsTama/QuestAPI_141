@@ -37,6 +37,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.databaseremote.R
 import com.example.databaseremote.modeldata.DataSiswa
 import com.example.databaseremote.uicontroller.route.DestinasiHome
+import com.example.databaseremote.viewmodel.HomeViewModel
+import com.example.databaseremote.viewmodel.StatusUiSiswa
 import com.example.databaseremote.viewmodel.provider.PenyediaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
