@@ -8,6 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.databaseremote.uicontroller.route.DestinasiDetail
+import com.example.databaseremote.uicontroller.route.DestinasiEdit
 import com.example.databaseremote.uicontroller.route.DestinasiEntry
 import com.example.databaseremote.uicontroller.route.DestinasiHome
 import com.example.databaseremote.view.EntrySiswaScreen
@@ -36,7 +38,8 @@ fun HostNavigasi(
             EntrySiswaScreen(navigateBack = { navController.navigate(DestinasiHome
                 .route) })
         }
-        composable(DestinasiDetail.routeWithArgs,arguments = listOf(navArgument(DestinasiDetail
+        composable(
+            DestinasiDetail.routeWithArgs,arguments = listOf(navArgument(DestinasiDetail
             .itemIdArg) {
             type = NavType.IntType })
         ){
