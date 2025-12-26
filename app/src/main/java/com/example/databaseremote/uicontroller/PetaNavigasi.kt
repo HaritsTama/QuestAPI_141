@@ -1,5 +1,6 @@
 package com.example.databaseremote.uicontroller
 
+import android.R.attr.type
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -12,6 +13,8 @@ import com.example.databaseremote.uicontroller.route.DestinasiDetail
 import com.example.databaseremote.uicontroller.route.DestinasiEdit
 import com.example.databaseremote.uicontroller.route.DestinasiEntry
 import com.example.databaseremote.uicontroller.route.DestinasiHome
+import com.example.databaseremote.view.DetailSiswaScreen
+import com.example.databaseremote.view.EditSiswaScreen
 import com.example.databaseremote.view.EntrySiswaScreen
 import com.example.databaseremote.view.HomeScreen
 
@@ -43,15 +46,13 @@ fun HostNavigasi(
             .itemIdArg) {
             type = NavType.IntType })
         ){
-            DetailSiswaScreen(navigateToEditItem = {navController.navigate("${DestinasiEdit.route}
-                /$it")},
+            DetailSiswaScreen(navigateToEditItem = {navController.navigate("${DestinasiEdit.route}/$it")},
                 navigateBack = { navController.navigate(DestinasiHome.route) })
         }
-        composable(DestinasiEdit.routeWithArgs, arguments = listOf(navArgument(DestinasiEdit.itemIdArg
-            ){
-            type = NavType.IntType}){
-            EditSiswaScreen(navigateBack = { navController.navigate(DestinasiHome.route) },
-                onNavigateUp = { navController.navigateUp() })
+        composable(DestinasiEdit.routeWithArgs, arguments = listOf(navArgument(DestinasiEdit.itemIdArg){
+            type = NavType.IntType })){
+            EditSiswaScreen(navigateBack = {navController.navigate(DestinasiHome.route)},
+                onNavigateUp = {navController.navigateUp()})
         }
     }
 }
