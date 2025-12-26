@@ -53,5 +53,9 @@ fun DetailSiswaScreen(
         }, modifier = modifier
     ) { innerPadding ->
         val coroutineScope = rememberCoroutineScope()
+        BodyDetailDataSiswa(
+            statusUIDetail = viewModel.statusUIDetail,
+            onDelete = {}
+        )
     }
 }
