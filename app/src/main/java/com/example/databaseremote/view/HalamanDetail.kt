@@ -1,13 +1,18 @@
 package com.example.databaseremote.view
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.databaseremote.uicontroller.route.DestinasiDetail
 import com.example.databaseremote.viewmodel.DetailViewModel
+import com.example.databaseremote.viewmodel.StatusUIDetail
 import com.example.databaseremote.viewmodel.provider.PenyediaViewModel
 
 
@@ -27,6 +32,11 @@ fun DetailSiswaScreen(
                 navigateUp = navigateBack
             )
         },
-        floatingActionButton = {}
+        floatingActionButton = {
+            val uiState = viewModel.statusUIDetail
+            FloatingActionButton(
+
+            )
+        }
     )
 }
