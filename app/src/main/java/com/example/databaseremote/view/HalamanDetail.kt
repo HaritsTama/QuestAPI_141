@@ -70,3 +70,9 @@ fun DetailSiswaScreen(
         )
     }
 }
+
+
+@Composable
+private fun BodyDetailDataSiswa(
+
+){}
