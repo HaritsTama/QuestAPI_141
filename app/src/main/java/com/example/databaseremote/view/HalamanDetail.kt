@@ -27,5 +27,6 @@ fun DetailSiswaScreen(
                 navigateUp = navigateBack
             )
         },
+        floatingActionButton = {}
     )
 }
