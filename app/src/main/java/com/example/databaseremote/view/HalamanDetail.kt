@@ -1,10 +1,13 @@
 package com.example.databaseremote.view
 
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -13,10 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.databaseremote.R
 import com.example.databaseremote.uicontroller.route.DestinasiDetail
 import com.example.databaseremote.viewmodel.DetailViewModel
 import com.example.databaseremote.viewmodel.StatusUIDetail
 import com.example.databaseremote.viewmodel.provider.PenyediaViewModel
+import kotlinx.coroutines.launch
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -55,7 +60,13 @@ fun DetailSiswaScreen(
         val coroutineScope = rememberCoroutineScope()
         BodyDetailDataSiswa(
             statusUIDetail = viewModel.statusUIDetail,
-            onDelete = {}
+            onDelete = { coroutineScope.launch {
+                viewModel.hapusSatuSiswa()
+                navigateBack()
+            }},
+            modifier = Modifier
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState())
         )
     }
 }
